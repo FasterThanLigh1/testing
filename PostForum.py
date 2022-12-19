@@ -57,15 +57,6 @@ class TestTest1():
     def teardown_method(self, method):
       self.driver.quit()
 
-    def check(self):
-        try:
-            self.driver.find_element(By.XPATH, "//div[contains(.,\'Required\')]")
-        except NoSuchElementException:
-            print("fail")
-            return False
-        print("success")
-        return True
-
     def test_test1(self):
         # Test name: Test1
         # Step # | name | target | value
@@ -142,7 +133,6 @@ class TestTest1():
         # 12 | click | id=id_messageeditable | 
         self.driver.find_element(By.ID, "id_messageeditable").click()
         # 13 | click | id=id_submitbutton | 
-        self.check()
         self.driver.find_element(By.ID, "id_submitbutton").click()
         # 14 | click | id=user-menu-toggle | 
         self.driver.find_element(By.ID, "user-menu-toggle").click()
@@ -492,5 +482,23 @@ def Test(method):
 
 tester = TestTest1()
 
+print("Test 1: ")
+Test(tester.test_test1)
+print("Test 2: ")
+Test(tester.test_test2)
+print("Test 3: ")
+Test(tester.test_test3)
+print("Test 4: ")
+Test(tester.test_test4)
+print("Test 5: ")
+Test(tester.test_test5)
+print("Test 6: ")
+Test(tester.test_test6)
+print("Test 7: ")
+Test(tester.test_test7)
+print("Test 8: ")
+Test(tester.test_test8)
+print("Test 9: ")
+Test(tester.test_test9)
 print("Test 10: ")
 Test(tester.test_test10)
